@@ -8,32 +8,30 @@ include("database.php");
 $database = databaseConnection();
 
 include("checkUser.php");
-
+$filename ='template/account_page.php';
 if(isset($_POST['page'])){
   print("posted");
-  $lastName = $_POST['lastname'];
-  $check_user = checkUser($database,$lastName);
-  if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){
+   if(!empty($_POST['lastname'])){
+     LoginUser($database,$_POST['lastname']);
+   }
+  $user = checkUser($database);
+  if(!empty($user)){
     
     if(isset($_GET['page'])){
       $page = $_GET['page'];
+     
+    if(file_exists('template/'.$page.'.php')){
       $filename = 'template/'.$page.'.php';
-    if(file_exists($filename)){
-     include($filename);
-    }
+    
     }
   }
   
-}
-else{
-  $page = 'account_page';
-  $filename ='template/'.$page.'.php';
-  
-  if(file_exists($filename)){
-    include($filename);
-  }
 }
 
+    
+
+}
+include($filename);
 
 
 
@@ -46,7 +44,7 @@ else{
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mock Up</title>
-    <link rel="stylesheet" href="./static/css/styles.css">
+    <link rel="stylesheet" href="./static/css/base.css">
   
 </head>
 
