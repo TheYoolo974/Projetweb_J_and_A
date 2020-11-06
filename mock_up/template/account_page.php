@@ -22,7 +22,11 @@ class="close" title="Close Modal">&times;</span>
       </label>
     </div>
 
+<<<<<<< Updated upstream
     <div class="container" style="background-color: #68656580">
+=======
+    <div class="container" style="background-color:#f1f1f1">
+>>>>>>> Stashed changes
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
       <span class="psw">Forgot <a href="#">password?</a></span>
     </div>
