@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+body
+{
+    background: url('earth_wallpaper.jpg');
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    color: #ffffff; /*text color */
+}
+nav li {
+    float: left;
+}
+
+nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav li a:hover:not(.active) {
+    background-color: #111;
+}
+
+nav .active {
+    background-color: #00f5fd8f;
+}
+
+
+footer {
+    width: 100vw;
+    background: rgba(0, 255, 200, 0.452);
+    padding: 1em;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    text-align: center;
+    width:100%;
+    margin-left: 0px;
+    /* display: inline-block;*/
+    vertical-align: bottom;
+    display: inline-block;
+    
+}
+
+.questioncontent{
+    padding-top : 50px;
+    display: inline-block;
+    padding-bottom : 121px;
+   
+    margin-left: 10px;
+}
+
+.quiz1{
+    font-family: 'Chilanka', cursive;
+}
+
