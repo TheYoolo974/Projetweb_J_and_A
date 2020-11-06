@@ -10,7 +10,7 @@ nav ul {
 }
 body
 {
-    background: url('earth_wallpaper.jpg');
+    background: url('blue_wallpaper.jpg');
     font-family: 'Trebuchet MS', Arial, sans-serif;
     color: #ffffff; /*text color */
 }
@@ -31,17 +31,13 @@ nav li a:hover:not(.active) {
 }
 
 nav .active {
-    background-color: #00f5fd8f;
+    background-color: #4CAF50;
 }
 
 
 footer {
     width: 100vw;
-<<<<<<< Updated upstream
-    background: rgba(0, 255, 200, 0.726);
-=======
-    background: rgba(0, 255, 200, 0.452);
->>>>>>> Stashed changes
+    background: rgba(127, 140, 141,1.0);
     padding: 1em;
     position: fixed;
     bottom: 0px;
@@ -59,11 +55,6 @@ footer {
     padding-top : 50px;
     display: inline-block;
     padding-bottom : 121px;
-   
-    margin-left: 10px;
 }
 
-.quiz1{
-    font-family: 'Chilanka', cursive;
-}
 
