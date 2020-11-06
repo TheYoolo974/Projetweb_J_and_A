@@ -12,7 +12,7 @@
 <?php include("template/header.php"); ?>
     <section>
     
-    <form  action="index.php?page=account_page" method="post">
+    <form  action="index.php?page=account_page.php" method="post">
         <div class="container">
           <label for="lastname"><b>first Name</b></label>
           <input type="text" placeholder="Enter Username" name="lastname" required>
@@ -22,7 +22,7 @@
           <input type="password" placeholder="Enter Password" name="password" required>
           <br>
 
-          <button type="submit">Login</button>
+          <input type="submit" name="submit">
         
         </div>
       </form>

@@ -8,15 +8,22 @@ include("database.php");
 $database = databaseConnection();
 
 include("checkUser.php");
+
+
+
 $filename ='template/account_page.php';
-if(isset($_POST['page'])){
-  print("posted");
-   if(!empty($_POST['lastname'])){
-     LoginUser($database,$_POST['lastname']);
+if(isset($_POST['submit'])){
+    
+   if(!empty($_POST['lastname'])){ 
+     LoginUser($database,$_POST["lastname"]);
+     
    }
+}
   $user = checkUser($database);
   if(!empty($user)){
     
+    $filename = 'template/home.php';
+
     if(isset($_GET['page'])){
       $page = $_GET['page'];
      
@@ -25,15 +32,9 @@ if(isset($_POST['page'])){
     
     }
   }
-  
 }
 
-    
-
-}
 include($filename);
-
-
 
 
 
@@ -44,26 +45,31 @@ include($filename);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mock Up</title>
-    <link rel="stylesheet" href="./static/css/base.css">
+    <link rel="stylesheet" href="./static/css/styles.css">
   
 </head>
 
 <body>
-    <?php include("template/header.php"); 
+    <?php 
+    if(isset($_GET['page'])){
+    $page=$_GET['page'];
+    }
+    else{
+    $page='oops';
+    }
+    if(!file_exists('template/'.$page.'.php'))
+    {
     
+    include("template/header.php"); 
     
-    //TODO (in the next step) control user access
-
-//TODO get page parameter ($_GET['page'] or $_POST['page']) and assign it into $page variable
-
-
-//if 'action/'.$page'.php' exists then include it (use file_exists($filename) function)
+    echo 'oop the file does not exist';
     
     
     ?>
 
       
-    <?php include('template/footer.php'); ?>
+    <?php include('template/footer.php');
+    } ?>
 </body>
 
 </html>

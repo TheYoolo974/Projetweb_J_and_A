@@ -107,7 +107,7 @@ ALTER TABLE `quizz`
 -- Index for the ʻuser` table
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`User_id`);
 
 --
 -- Index for the ʻuser_answer` table
@@ -143,7 +143,7 @@ ALTER TABLE `quizz`
 --  AUTO_INCREMENT for the `user` table;
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int (11) NOT NULL AUTO_INCREMENT COMMENT 'user identifier';
+  MODIFY `User_id` int (11) NOT NULL AUTO_INCREMENT COMMENT 'user identifier';
 
 --
 -- AUTO_INCREMENT for the ʻuser_answer` table
@@ -229,5 +229,5 @@ VALUES ('Which Avenger is this?','select',2),
 --
 -- Insertion to user table
 -- ---------------------------------------------------------- ----
-insert into `user`(`user_last_name`,`user_first_name`,`user_password`) VALUES('Ofori','Joshua','php_v2');
+insert into `user`(`user_last_name`,`User_first_name`,`User_password`) VALUES ('Ofori','Joshua','php_v2');
 
