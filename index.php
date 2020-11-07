@@ -10,7 +10,7 @@ $database = databaseConnection();
 include("checkUser.php");
 
 
-
+$page='';
 $filename ='template/account_page.php';
 if(isset($_POST['submit'])){
     
@@ -34,7 +34,7 @@ if(isset($_POST['submit'])){
   }
 }
 
-include($filename);
+
 
 
 
@@ -50,15 +50,30 @@ include($filename);
 </head>
 
 <body>
-    <?php 
-    if(isset($_GET['page'])){
-    $page=$_GET['page'];
+    <?php
+    if(isset($_GET['page'])) {
+    if($_GET['page']=='quizz_results'){
+
+      $answers =$_POST;
+      
+      array_pop($answers);
+      
+         foreach($answers as $answer){
+           
+           
+           $session = $_SESSION['users_id'];
+           $request= "INSERT INTO user_answer( User_id, answer_id ) VALUES ('$session', '$answer' )";
+      
+             $response = $database->exec($request);
+             
+         }
+     
     }
-    else{
-    $page='oops';
-    }
-    if(!file_exists('template/'.$page.'.php'))
-    {
+  }
+
+
+    if(!isset($_GET['page']) && $page !==''){
+    
     
     include("template/header.php"); 
     
@@ -69,7 +84,8 @@ include($filename);
 
       
     <?php include('template/footer.php');
-    } ?>
+    }
+    include($filename); ?>
 </body>
 
 </html>

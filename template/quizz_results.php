@@ -1,32 +1,21 @@
 
   
  <?php
-
+ $marks=0;
 if(isset($_POST['submit'])){
    
-   $count=0;
-   if($_GET['quiz']==1){
-    $count =2;
-   }
-   else if($_GET['quiz']==2){
-    $count = 6;
-   }
-   $marks=0;
-   $answers =$_POST;
-   for( $i =0;$i<3;$i++){
-      $response_answers = $database->query("SELECT `answer_text` FROM `answer` WHERE
-   `answer`.`answer_question_id`= $count and `answer`.`Is_valid_answer`=1");
+   $userid =$_SESSION['users_id'];
    
-   $correct = $response_answers->fetch();
-
-   if($answers[$count]== $correct['answer_text']){
-      $marks++;
-   }
-   
+   $response_answers = $database->query("SELECT * from `answer` join `question` on
+    `answer`.`answer_question_id` = `question`.`question_id` left join `user_answer` on `user_answer`.`answer_id` = `answer`.`answer_id`
+     where `question`.`question_quizz_id` = 1 and `user_answer`.`user_id` = $userid;");
+   $Useranswers = $response_answers->fetch();
    $response_answers->closeCursor();
-   $count++;
+   var_dump($Useranswers);
+   
    
    }
+   
 ?>
 
 
@@ -46,16 +35,12 @@ if(isset($_POST['submit'])){
    Your Results!
 </p>
 
-   
+  <?php 
 echo($marks); 
    
-}
-
 
 ?>
 
 <?php include('template/footer.php'); ?>
   </body>
   </html>
-
-  

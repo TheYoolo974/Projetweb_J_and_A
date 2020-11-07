@@ -15,7 +15,8 @@ function LoginUser($database,$lastName){
         
         
     }
-  
+
+     $response_user->closeCursor();
     
 }
 
@@ -28,6 +29,7 @@ if(isset($_SESSION['users_id'])){
     if(!empty($checked)){
         return $checked;
     }
+    $response_user->closeCursor();
 }
  return false;
 

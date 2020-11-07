@@ -52,14 +52,14 @@ if (isset($_GET['quizz_id'])) {
          case "radio":
        foreach($response_answers as $answer){?>
        <br>
-        <input type="radio" id="<?php echo($answer['answer_id']);?>" name="<?php echo($question['question_id']);?>" value="<?php echo($answer['answer_text']);?>"> <?php echo($answer['answer_text']); ?>
+        <input type="radio" id="<?php echo($answer['answer_id']);?>" name="<?php echo($question['question_id']);?>" value="<?php echo($answer['answer_id']);?>"> <?php echo($answer['answer_text']); ?>
       <?php
        }
       break;
       case "checkbox":
         foreach($response_answers as $answer){?>
         <br>
-         <input type="checkbox" id="<?php echo($answer['answer_id']);?>" name="<?php echo($question['question_id']);?>" value="<?php echo($answer['answer_text']);?>"><?php echo($answer['answer_text']);?>
+         <input type="checkbox" id="<?php echo($answer['answer_id']);?>" name="<?php echo($question['question_id']);?>" value="<?php echo($answer['answer_id']);?>"><?php echo($answer['answer_text']);?>
        <?php
         }
        break;
@@ -71,11 +71,11 @@ if (isset($_GET['quizz_id'])) {
         }
        break;
        case "select":?>
-        <select  id="<?php echo($response_answer['answer_id']);?>" name="<?php echo($question['question_id']);?>" >
+        <select  name="<?php echo($question['question_id']);?>" >
         <br>
         <option  value=""> --Please choose an option-- </option>
         <?php foreach($response_answers as $answer){?>
-        <option  value="<?php echo($answer['answer_text']);?>" > <?php echo($answer['answer_text']);?></option>
+        <option  value="<?php echo($answer['answer_id']);?>" > <?php echo($answer['answer_text']);?></option>
 
        <?php
         }?>
