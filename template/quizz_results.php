@@ -3,15 +3,31 @@
  <?php
  $marks=0;
 if(isset($_POST['submit'])){
+  if($_GET['quiz']==1){
+    $quizId =1;
+   }
+   else if($_GET['quiz']==2){
+    $quizId = 2;
+   }
    
    $userid =$_SESSION['users_id'];
    
-   $response_answers = $database->query("SELECT * from `answer` join `question` on
-    `answer`.`answer_question_id` = `question`.`question_id` left join `user_answer` on `user_answer`.`answer_id` = `answer`.`answer_id`
-     where `question`.`question_quizz_id` = 1 and `user_answer`.`user_id` = $userid;");
-   $Useranswers = $response_answers->fetch();
+   $response_answers = $database->query("SELECT `Is_valid_answer` from `user_answer` join `answer` on
+   `user_answer`.`answer_id` = `answer`.`answer_id`  join `question` on `answer`.`answer_question_id` = `question`.`question_id`
+   where `question`.`question_quizz_id` = $quizId and `user_answer`.`user_id` = $userid");
+    
+
+   $Useranswers = $response_answers->fetchAll();
+   
    $response_answers->closeCursor();
-   var_dump($Useranswers);
+
+   foreach($Useranswers as $ans){
+     
+     if($ans['Is_valid_answer']){
+       $marks++;
+     }
+   }
+  
    
    
    }
