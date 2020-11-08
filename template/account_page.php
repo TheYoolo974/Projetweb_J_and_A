@@ -20,20 +20,6 @@
           <label for="lastname"><b>First Name</b></label>
           <input type="text" placeholder="Enter Username" name="lastname" required>
           <br>
-
-          
-
-          
-        
-        </div>
-      </form>
-      </section>
-      <section class="logincontent2">
-      <form  action="index.php?page=account_page.php" method="post">
-        
-        <div class="container">
-          
-
           <label for="psw"><b>Password</b></label>
           <input type="password" placeholder="Enter Password" name="password" required>
           <br>
