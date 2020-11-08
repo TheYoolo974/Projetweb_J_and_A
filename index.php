@@ -57,9 +57,9 @@ if(isset($_POST['submit'])){
       $answers =$_POST;
       
       array_pop($answers);
-      
+         
          foreach($answers as $answer){
-           
+          
            
            $session = $_SESSION['users_id'];
            $request= "INSERT INTO user_answer( User_id, answer_id ) VALUES ('$session', '$answer' )";

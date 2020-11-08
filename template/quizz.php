@@ -10,7 +10,7 @@ if (isset($_GET['quizz_id'])) {
 
   <?php 
 
-  $response_questions = $database->query("SELECT `question_id`, `question_title`,`question_input_type` FROM `question`  JOIN `quizz` ON 
+  $response_questions = $database->query("SELECT `question_id`, `question_title`,`question_input_type`,`related_image` FROM `question`  JOIN `quizz` ON 
   `question`.`question_quizz_id` = `quizz`.`quizz_id`WHERE `quizz`.`quizz_id`= $quizz_id");
   $question_number = 1;
 ?>
@@ -40,7 +40,10 @@ if (isset($_GET['quizz_id'])) {
       <section class="questioncontent">
 
         <h3> - <?php echo ($question_number); ?> : </h3>
-        <img src="./static/img/question<?php echo($question['question_id'])?>.jpg" width="250" height="250">
+        <?php if (isset($question['related_image']) && $question['related_image'] === '1') {?>
+          <img src="static/img/question<?php echo($question['question_id'])?>.jpg" width="250" height="250">
+        <?php } ?>
+
         <br>
         <label><?php echo ($question['question_title']); ?> </label>
        
