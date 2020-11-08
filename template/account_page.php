@@ -20,6 +20,7 @@
           <label for="lastname"><b>First Name</b></label>
           <input type="text" placeholder="Enter Username" name="lastname" required>
           <br>
+
           <label for="psw"><b>Password</b></label>
           <input type="password" placeholder="Enter Password" name="password" required>
           <br>
