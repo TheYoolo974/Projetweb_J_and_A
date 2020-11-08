@@ -10,10 +10,10 @@
 
 <body>
 <?php include("template/header.php"); ?>
-    <section>
+    <section class="homecontent">
 
-<p>Bonjour, bienvenue sur notre site</p> 
-
+<p>Welcome to our website</p> 
+</section>
 
 <?php include('template/footer.php'); ?>
   </body>
