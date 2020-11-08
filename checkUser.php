@@ -2,16 +2,21 @@
 
 
 
-function LoginUser($database,$lastName){
-    $response_user = $database->query("SELECT `User_id` FROM `user` ");
-     
-    $user = $response_user->fetch();
+function LoginUser($database,$lastName,$password){
     
-    $total = count($user);
+    
+ $sql = "SELECT user_id FROM user WHERE User_last_name = :name AND User_password=:pwd";
+$response_user= $database->prepare($sql);
+$response_user->execute(array(':name'=> $lastName,':pwd'=>$password));
+$user =  $response_user->fetch();
+
+
+     
    
-    if($total==2){
+   
+    if($user){
         
-        $_SESSION['users_id'] = $user['User_id'];
+        $_SESSION['users_id'] = $user['user_id'];
         
         
     }
