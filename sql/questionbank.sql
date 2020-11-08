@@ -39,7 +39,7 @@ CREATE TABLE `question` (
   `question_title` varchar (255) NOT NULL COMMENT 'title of the question',
   `question_quizz_id` int (11) NOT NULL COMMENT 'link question quizz',
   `question_input_type` varchar (255) NOT NULL COMMENT 'input of the question',
-  `related_image` boolean (1) NOT NULL COMMENT 'image or not'
+  `related_image` boolean  NOT NULL COMMENT 'image or not'
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
 -- ------------------------------------------------- --------
