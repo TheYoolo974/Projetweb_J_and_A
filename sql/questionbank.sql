@@ -38,8 +38,8 @@ CREATE TABLE `question` (
   `question_id` int (11) NOT NULL COMMENT 'question_identification',
   `question_title` varchar (255) NOT NULL COMMENT 'title of the question',
   `question_quizz_id` int (11) NOT NULL COMMENT 'link question quizz',
-  `question_input_type` varchar (255) NOT NULL COMMENT 'input of the question'
-  `related_image` tinyint (1) NULL COMMENT 'image or not'
+  `question_input_type` varchar (255) NOT NULL COMMENT 'input of the question',
+  `related_image` boolean (1) NOT NULL COMMENT 'image or not'
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
 -- ------------------------------------------------- --------
@@ -221,7 +221,7 @@ VALUES ('Who is this Man?','select',1,1),
 ('when was Obama elected ?','checkbox',1,1);
 
 insert into question(`question_title`,`question_input_type`,`question_quizz_id`,`related_image`) 
-VALUES ('Which Avenger is this?','select',2),
+VALUES ('Which Avenger is this?','select',2,1),
 ('What is name of the fifth Starwars movie?','radio',2,0),
 ('Which characters are members of the fellowship of the Ring','checkbox',2,0),
 ('In which year was Thor ragnorok released?','number',2,0);
