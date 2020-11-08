@@ -15,7 +15,7 @@ $filename ='template/account_page.php';
 if(isset($_POST['submit'])){
     
    if(!empty($_POST['lastname'])){ 
-     LoginUser($database,$_POST["lastname"]);
+     LoginUser($database,$_POST["lastname"],$_POST["password"]);
      
    }
 }

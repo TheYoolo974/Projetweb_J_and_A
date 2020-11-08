@@ -230,5 +230,6 @@ VALUES ('Which Avenger is this?','select',2,1),
 --
 -- Insertion to user table
 -- ---------------------------------------------------------- ----
-insert into `user`(`user_last_name`,`User_first_name`,`User_password`) VALUES ('Ofori','Joshua','php_v2');
-
+insert into `user`(`User_last_name`,`User_first_name`,`User_password`) VALUES ('Ofori','Joshua','php_v2');
+--
+--
