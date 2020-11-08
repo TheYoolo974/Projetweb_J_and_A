@@ -39,11 +39,7 @@ CREATE TABLE `question` (
   `question_title` varchar (255) NOT NULL COMMENT 'title of the question',
   `question_quizz_id` int (11) NOT NULL COMMENT 'link question quizz',
   `question_input_type` varchar (255) NOT NULL COMMENT 'input of the question',
-<<<<<<< Updated upstream
   `related_image` boolean (1) NOT NULL COMMENT 'image or not'
-=======
-  `related_image` tinyint (1) NULL COMMENT 'image or not'
->>>>>>> Stashed changes
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
 -- ------------------------------------------------- --------
@@ -234,6 +230,5 @@ VALUES ('Which Avenger is this?','select',2,1),
 --
 -- Insertion to user table
 -- ---------------------------------------------------------- ----
-insert into `user`(`User_last_name`,`User_first_name`,`User_password`) VALUES ('Ofori','Joshua','php_v2');
---
---
+insert into `user`(`user_last_name`,`User_first_name`,`User_password`) VALUES ('Ofori','Joshua','php_v2');
+
