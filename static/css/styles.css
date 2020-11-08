@@ -10,7 +10,7 @@ nav ul {
 }
 body
 {
-    background: url('blue_wallpaper.jpg');
+    background: url('../img/earth_wallpaper.jpg');
     font-family: 'Trebuchet MS', Arial, sans-serif;
     color: #ffffff; /*text color */
 }
@@ -27,17 +27,17 @@ nav li a {
 }
 
 nav li a:hover:not(.active) {
-    background-color: #111;
+    background-color: rgba(17, 17, 17, 0.37);
 }
 
 nav .active {
-    background-color: #4CAF50;
+    background-color: #00e1ffd0;
 }
 
 
 footer {
     width: 100vw;
-    background: rgba(127, 140, 141,1.0);
+    background: rgba(127, 140, 141, 0.5);
     padding: 1em;
     position: fixed;
     bottom: 0px;
@@ -57,4 +57,14 @@ footer {
     padding-bottom : 121px;
 }
 
+.logincontent{
+    padding-top : 150px;
+    font-size: xx-large;
+    padding-bottom : 121px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 6em
+
+    
+}
 

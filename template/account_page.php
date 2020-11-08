@@ -10,11 +10,11 @@
 
 <body>
 <?php include("template/header.php"); ?>
-    <section>
+    <section class="logincontent">
     
     <form  action="index.php?page=account_page.php" method="post">
         <div class="container">
-          <label for="lastname"><b>first Name</b></label>
+          <label for="lastname"><b>First Name</b></label>
           <input type="text" placeholder="Enter Username" name="lastname" required>
           <br>
 
@@ -26,7 +26,7 @@
         
         </div>
       </form>
-      <section>
+      </section>
       <?php include('template/footer.php'); ?>
   </body>
   </html>
