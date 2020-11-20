@@ -17,7 +17,7 @@
     <form  action="index.php?page=account_page" method="post">
 
         <div class="container">
-          <label for="lastname"><b>First Name</b></label>
+          <label for="lastname"><b>Last Name</b></label>
           <input type="text" placeholder="Enter Username" name="lastname" required>
           <br>
 

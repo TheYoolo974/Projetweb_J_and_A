@@ -20,6 +20,7 @@
       $response->closeCursor() ;
       ?>
       <li><a href="index.php?page=account_page">Login</a></li>
+      <li><a href="index.php?page=logout">Logout</a></li>
     </ul>
   </nav>
 </header>

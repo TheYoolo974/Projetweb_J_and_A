@@ -1,7 +1,7 @@
 <?php
 
 function databaseConnection(){
-    return new PDO('mysql:host=localhost;dbname=questionbank','root','JO0437anhydrous');
+    return new PDO('mysql:host=localhost;dbname=questionbank','root','');
 
 
 

@@ -12,15 +12,11 @@ include("checkUser.php");
 
 $page='';
 $filename ='template/account_page.php';
-
 if(isset($_GET['page'])){
   $page = $_GET['page'];
-  if($page == 'register_page'){
-    $filename = 'template/register_page.php';
-    
-  }
+  if($page == 'register_page')
+  include 'template/register_page.php';
 }
-
 
 if(isset($_POST['submit']) ){
   
@@ -46,6 +42,9 @@ if(isset($_POST['submit']) ){
     if(file_exists('template/'.$page.'.php')){
       $filename = 'template/'.$page.'.php';
     
+    }
+    if($page == 'logout'){
+      logout($database);
     }
   }
 }
@@ -88,19 +87,7 @@ if(isset($_POST['submit']) ){
   }
 
 
-    if(!isset($_GET['page']) && $page !==''){
-    
-    
-    include("template/header.php"); 
-    
-    echo 'oop the file does not exist';
-    
-    
-    ?>
-
-      
-    <?php include('template/footer.php');
-    }
+   
     include($filename); ?>
 </body>
 
