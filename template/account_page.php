@@ -26,9 +26,15 @@
           <br>
 
           <input type="submit" name="submit">
+
+          
         
         </div>
       </form>
+                <form action="index.php?page=register_page.php" method="post">
+            <input type="submit" value="Register">
+                  
+          </form>
       </section>
       <?php include('template/footer.php'); ?>
   </body>
