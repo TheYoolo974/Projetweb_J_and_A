@@ -22,11 +22,15 @@ if(isset($_GET['page'])){
 }
 
 
-if(isset($_POST['submit'])&& $_POST['page'] =="account_page"){
-    
+if(isset($_POST['submit']) ){
+  
+    if($_GET['page']=='account_page'){
    if(!empty($_POST['lastname'])){ 
      LoginUser($database,$_POST["lastname"],$_POST["password"]);
-     
+   }
+   }
+   if($_GET['page']=='register_page'){
+    registerUser($database,$_POST);
    }
 }
 

@@ -18,13 +18,16 @@ $user =  $response_user->fetch();
     
 }
 function registerUser($database,$registration){
+
     $firstname=$registration['firstname']; $lastName=$registration['lastname']; $address=$registration['address'];$phone=$registration['phone'];
     $password=$registration['password']; $birthdate=$registration['birthdate'];
+    //passing registration['names'] print white space error
+
     $request= "INSERT INTO user(user_last_name,user_first_name,user_adress,user_phone,user_birthdate,user_password)VALUES
     ('$firstname','$lastName','$address','$phone','$birthdate','$password')";
       
     $response = $database->exec($request);
-    var_dump($response);
+    LoginUser($database,$lastName,$password);
 }
 
 function checkUser($database){
