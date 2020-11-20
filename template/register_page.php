@@ -10,10 +10,10 @@
 
 <body>
 <?php include("/template/header.php"); ?>
-<section class="logincontent0">
-<p><font color="white">Please enter </font></p>
+<section class="registercontent0">
+<p><font color="white">Please enter the following information : </font></p>
 </section>
-    <section class="logincontent1">  
+    <section class="registercontent1">  
     <form  action="index.php?page=login_page.php" method="post">
 
         <div class="container">
