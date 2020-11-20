@@ -91,32 +91,6 @@ footer {
     
 }
 
-.logincontent2{
-    
-    font-size: xx-large;
-    padding-bottom : 121px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 6em
-
-    
-}
-.registercontent1{
-    
-    font-size: x-large;
-    padding-bottom : 121px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 6em
-
-    
-}
-.registercontent0{
-    padding-top : 50px;
-    font-size: x-large;
-    padding-bottom : 20px;
-    margin:auto;
-    width:20em
-
-    
+.logincontent1 .link{
+    font-size: 2rem;
 }

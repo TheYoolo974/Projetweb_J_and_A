@@ -12,13 +12,25 @@ include("checkUser.php");
 
 $page='';
 $filename ='template/account_page.php';
-if(isset($_POST['submit'])){
+
+if(isset($_GET['page'])){
+  $page = $_GET['page'];
+  if($page == 'register_page'){
+    $filename = 'template/register_page.php';
+    
+  }
+}
+
+
+if(isset($_POST['submit'])&& $_POST['page'] =="account_page"){
     
    if(!empty($_POST['lastname'])){ 
      LoginUser($database,$_POST["lastname"],$_POST["password"]);
      
    }
 }
+
+
   $user = checkUser($database);
   if(!empty($user)){
     

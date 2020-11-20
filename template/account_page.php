@@ -26,15 +26,13 @@
           <br>
 
           <input type="submit" name="submit">
+          <p> Don't have an account?Sign up <a href="index.php?page=register_page">here</a></p>
 
           
         
         </div>
       </form>
-                <form action="index.php?page=register_page" method="post">
-            <input type="submit" value="Register">
-                  
-          </form>
+                
       </section>
       <?php include('template/footer.php'); ?>
   </body>

@@ -9,20 +9,22 @@ function LoginUser($database,$lastName,$password){
 $response_user= $database->prepare($sql);
 $response_user->execute(array(':name'=> $lastName,':pwd'=>$password));
 $user =  $response_user->fetch();
-
-
-     
-   
-   
     if($user){
         
-        $_SESSION['users_id'] = $user['user_id'];
-        
-        
+        $_SESSION['users_id'] = $user['user_id'];    
     }
 
      $response_user->closeCursor();
     
+}
+function registerUser($database,$registration){
+    $firstname=$registration['firstname']; $lastName=$registration['lastname']; $address=$registration['address'];$phone=$registration['phone'];
+    $password=$registration['password']; $birthdate=$registration['birthdate'];
+    $request= "INSERT INTO user(user_last_name,user_first_name,user_adress,user_phone,user_birthdate,user_password)VALUES
+    ('$firstname','$lastName','$address','$phone','$birthdate','$password')";
+      
+    $response = $database->exec($request);
+    var_dump($response);
 }
 
 function checkUser($database){
