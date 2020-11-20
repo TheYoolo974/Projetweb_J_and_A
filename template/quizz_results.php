@@ -50,12 +50,14 @@ if(isset($_POST['submit'])){
    <p>
    Your Results!
 </p>
-
+<p>
   <?php 
+  
 echo($marks); 
    
 
 ?>
+</p>
 
 <?php include('template/footer.php'); ?>
   </body>
