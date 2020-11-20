@@ -9,7 +9,7 @@
 </head>
 
 <body>
-<?php include("/template/header.php"); ?>
+<?php include("template/header.php"); ?>
 <section class="registercontent0">
 <p><font color="white">Please enter the following information : </font></p>
 </section>

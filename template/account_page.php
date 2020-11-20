@@ -31,7 +31,7 @@
         
         </div>
       </form>
-                <form action="index.php?page=register_page.php" method="post">
+                <form action="index.php?page=register_page" method="post">
             <input type="submit" value="Register">
                   
           </form>
