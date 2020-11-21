@@ -23,10 +23,12 @@ if(isset($_POST['submit']) ){
     if($_GET['page']=='account_page'){
    if(!empty($_POST['lastname'])){ 
      LoginUser($database,$_POST["lastname"],$_POST["password"]);
+     header('Location: index.php');
    }
    }
    if($_GET['page']=='register_page'){
     registerUser($database,$_POST);
+    header('Location: index.php');
    }
 }
 
@@ -35,6 +37,7 @@ if(isset($_POST['submit']) ){
   if(!empty($user)){
     
     $filename = 'template/home.php';
+   
 
     if(isset($_GET['page'])){
       $page = $_GET['page'];

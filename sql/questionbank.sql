@@ -53,7 +53,15 @@ CREATE TABLE `quizz` (
 
 
 -- ------------------------------------------------- --------
+CREATE TABLE `results` (
+  `result_id` int (11) NOT NULL COMMENT 'results Identifier',
+  `user_id` int (11) NOT NULL COMMENT 'user id',
+  `result` int(11) NOT NULL COMMENT 'results',
+  `quiz_id`int(11) NOT NULL COMMENT 'quiz id'
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
+
+-- ------------------------------------------------- --------
 --
 -- Structure of the ʻuser` table
 --
@@ -117,11 +125,17 @@ ALTER TABLE `user_answer`
   ADD PRIMARY KEY (`user_answer_id`),
   ADD KEY `user_id_fk` (`user_id`),
   ADD KEY `answer_id_fk` (`answer_id`);
-
+--
+-- Index for results table
+ALTER TABLE `results`
+  ADD PRIMARY KEY (`result_id`),
+  ADD KEY `user_id_fk` (`user_id`),
+  ADD KEY `quiz_id_fk` (`quiz_id`);
 --
 -- AUTO_INCREMENT for unloaded tables
 --
-
+ALTER TABLE `results`
+MODIFY `result_id` int (11) NOT NULL AUTO_INCREMENT COMMENT 'result id';
 --
 -- AUTO_INCREMENT for the ʻanswer` table
 --

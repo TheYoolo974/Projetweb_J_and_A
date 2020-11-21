@@ -31,7 +31,10 @@ if(isset($_POST['submit'])){
    
    
    }
-   
+   $session = $_SESSION['users_id'];
+   $request= "INSERT INTO results( user_id, result,quiz_id ) VALUES ('$session', '$marks',$quizId )";
+
+     $response = $database->exec($request);
 ?>
 
 
@@ -47,6 +50,7 @@ if(isset($_POST['submit'])){
 
 <body>
 <?php include("template/header.php"); ?>
+<section class="logincontent1">  
    <p>
    Your Results!
 </p>
@@ -58,7 +62,7 @@ echo($marks);
 
 ?>
 </p>
-
+</section>
 <?php include('template/footer.php'); ?>
   </body>
   </html>

@@ -99,7 +99,7 @@ if (isset($_GET['quizz_id'])) {
       <input type="submit" name="submit">
     </form>
     <br>
-
+   <p>click <a href="index.php?page=all_results&quiz=<?php echo($quizz_id); ?>">here</a> to see scores on this quiz</p>
 
 
 
