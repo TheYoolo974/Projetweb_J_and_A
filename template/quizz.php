@@ -4,7 +4,7 @@ if (isset($_GET['quizz_id'])) {
 } 
 
 
-
+ 
 ?>
 
 
@@ -28,7 +28,7 @@ if (isset($_GET['quizz_id'])) {
   <body>
   <?php include("template/header.php"); ?>
     <?php
-
+  if(!isset($_SESSION['quiz'.$quizz_id])){
   foreach ($response_questions as $question) {
 
     $question_id =$question['question_id'];
@@ -99,12 +99,23 @@ if (isset($_GET['quizz_id'])) {
       <input type="submit" name="submit">
     </form>
     <br>
+    <?php }
+    else {?>
+       <p>Your results</p>
+      <p>You have already passed this quiz  </p>
+      <p>Pass this test again</p>
+      <p>delete this score<p>
+    <?php }
+    ?>
+
+    
    <p>click <a href="index.php?page=all_results&quiz=<?php echo($quizz_id); ?>">here</a> to see scores on this quiz</p>
 
 
 
     </section>
-    <?php include('template/footer.php'); ?>
+  
+  <?php include('template/footer.php'); ?>
   </body>
   </html>
   

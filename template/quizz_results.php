@@ -58,8 +58,8 @@ if(isset($_POST['submit'])){
   <?php 
   
 echo($marks); 
-   
 
+   $_SESSION['quiz'.$quizId]='done';
 ?>
 </p>
 </section>

@@ -15,7 +15,7 @@ $filename ='template/account_page.php';
 if(isset($_GET['page'])){
   $page = $_GET['page'];
   if($page == 'register_page')
-  include 'template/register_page.php';
+  $filename ='template/register_page.php';
 }
 
 if(isset($_POST['submit']) ){
