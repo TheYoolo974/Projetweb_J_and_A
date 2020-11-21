@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
    
    $userid =$_SESSION['users_id'];
    
-   $response_answers = $database->query("SELECT `Is_valid_answer` from `user_answer` join `answer` on
+   $response_answers = $database->query("SELECT  `Is_valid_answer` from `user_answer` join `answer` on
    `user_answer`.`answer_id` = `answer`.`answer_id`  join `question` on `answer`.`answer_question_id` = `question`.`question_id`
    where `question`.`question_quizz_id` = $quizId and `user_answer`.`user_id` = $userid");
     
@@ -58,7 +58,7 @@ if(isset($_POST['submit'])){
   <?php 
   
 echo($marks); 
-
+ $_SESSION['marks']=$marks;
    $_SESSION['quiz'.$quizId]='done';
 ?>
 </p>

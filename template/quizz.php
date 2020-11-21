@@ -1,6 +1,20 @@
 <?php
 if (isset($_GET['quizz_id'])) {
   $quizz_id = $_GET['quizz_id'];
+  if(isset($_GET['retake'])){
+    unset($_SESSION['quiz'.$quizz_id]);
+    $userid = $_SESSION['users_id'];
+    $request= "DELETE FROM user_answer WHERE `user_answer`.`User_id`=$userid";
+      
+    $response = $database->exec($request);
+  }
+  if(isset($_GET['delete'])){
+    $userid = $_SESSION['users_id'];
+    $usermarks=$_SESSION['marks'];
+    $request= "DELETE FROM results WHERE `results`.`user_id`=$userid AND `results`.`quiz_id`=$quizz_id AND `results`.`result`=$usermarks";
+    
+    $response = $database->exec($request);
+  }
 } 
 
 
@@ -101,10 +115,14 @@ if (isset($_GET['quizz_id'])) {
     <br>
     <?php }
     else {?>
-       <p>Your results</p>
+    <div class="score">
+    <p>Your results is <?php echo $_SESSION['marks'] ?></p>
       <p>You have already passed this quiz  </p>
-      <p>Pass this test again</p>
-      <p>delete this score<p>
+      <p>Pass this test <a href="index.php?page=quizz&quizz_id=<?php echo($quizz_id); ?>&retake=true">again</a></p>
+      <p><a href="index.php?page=quizz&quizz_id=<?php echo($quizz_id); ?>&delete=<?php echo $_SESSION['marks']?>">delete</a> this score<p>
+    </div>
+      
+        
     <?php }
     ?>
 
