@@ -29,13 +29,16 @@ $response_answers = $database->query("SELECT `User_first_name`,`User_last_name`,
 
    $Useranswers = $response_answers->fetchAll();
    
-   $response_answers->closeCursor();
-//hearder first name last name results example th
-   foreach($Useranswers as $ans){?>
-       <p><?php echo $ans['User_first_name'];   echo $ans['User_last_name']; echo $ans['result']?></P>
+   $response_answers->closeCursor();?>
+
+<table>
+<tr><th>Name </th><th>Results </th></tr>
+  <?php foreach($Useranswers as $ans){?>
+       <tr><td><?php   echo $ans['User_last_name'];?> </td>  <td> <?php echo $ans['result']?></td></tr>
        <!-- tr echo $ans['User_first_name'] -->
   <?php }
    ?>
+</table>
 <!-- table  footer here-->
 <?php include('template/footer.php'); ?>
   </body>

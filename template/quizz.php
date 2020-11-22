@@ -127,7 +127,7 @@ if (isset($_GET['quizz_id'])) {
     ?>
 
     
-   <p>click <a href="index.php?page=all_results&quiz=<?php echo($quizz_id); ?>">here</a> to see scores on this quiz</p>
+   <p class="score">click <a href="index.php?page=all_results&quiz=<?php echo($quizz_id); ?>">here</a> to see scores on this quiz</p>
 
 
 
