@@ -52,7 +52,7 @@ if(isset($_POST['submit'])){
 <?php include("template/header.php"); ?>
 <section class="logincontent1">  
    <p>
-   Your Results!
+   Your score is:
 </p>
 <p>
   <?php 

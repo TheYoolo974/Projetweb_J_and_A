@@ -116,7 +116,7 @@ if (isset($_GET['quizz_id'])) {
     <?php }
     else {?>
     <div class="score">
-    <p>Your results is <?php echo $_SESSION['marks'] ?></p>
+    <p>Your score is <?php echo $_SESSION['marks'] ?></p>
       <p>You have already passed this quiz  </p>
       <p>Pass this test <a href="index.php?page=quizz&quizz_id=<?php echo($quizz_id); ?>&retake=true">again</a></p>
       <p><a href="index.php?page=quizz&quizz_id=<?php echo($quizz_id); ?>&delete=<?php echo $_SESSION['marks']?>">delete</a> this score<p>

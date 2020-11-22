@@ -95,9 +95,8 @@ footer {
     font-size: 2rem;
 }
 .score{
-    font-size: medium;
+    font-size :medium;
+    vertical-align: bottom;
     padding-bottom : 21px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 20em
+    margin-left: 100px;
 }
