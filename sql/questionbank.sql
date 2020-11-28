@@ -57,7 +57,8 @@ CREATE TABLE `results` (
   `result_id` int (11) NOT NULL COMMENT 'results Identifier',
   `user_id` int (11) NOT NULL COMMENT 'user id',
   `result` int(11) NOT NULL COMMENT 'results',
-  `quiz_id`int(11) NOT NULL COMMENT 'quiz id'
+  `quiz_id`int(11) NOT NULL COMMENT 'quiz id',
+  `answer_date_time` datetime NOT NULL COMMENT 'time of anwser'
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
 

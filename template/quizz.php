@@ -2,7 +2,7 @@
 if (isset($_GET['quizz_id'])) {
   $quizz_id = $_GET['quizz_id'];
   if(isset($_GET['retake'])){
-    unset($_SESSION['quiz'.$quizz_id]);
+    unset($_SESSION['quiz'.$quizz_id.$_SESSION['users_id']]);
     $userid = $_SESSION['users_id'];
     $request= "DELETE FROM user_answer WHERE `user_answer`.`User_id`=$userid";
       
@@ -42,7 +42,7 @@ if (isset($_GET['quizz_id'])) {
   <body>
   <?php include("template/header.php"); ?>
     <?php
-  if(!isset($_SESSION['quiz'.$quizz_id])){
+  if(!isset($_SESSION['quiz'.$quizz_id.$_SESSION['users_id']])){
   foreach ($response_questions as $question) {
 
     $question_id =$question['question_id'];

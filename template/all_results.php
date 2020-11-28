@@ -24,7 +24,7 @@
 <?php include("template/header.php"); ?>
 <?php
 $response_answers = $database->query("SELECT `User_first_name`,`User_last_name`,`result` from `user` join `results` on
-   `user`.`User_id` = `results`.`user_id` where `results`.`quiz_id` = $quizId");
+   `user`.`User_id` = `results`.`user_id` where `results`.`quiz_id` = $quizId  ORDER BY `result` DESC, `results`.`answer_date_time` ASC ");
     
 
    $Useranswers = $response_answers->fetchAll();

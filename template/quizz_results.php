@@ -32,8 +32,11 @@ if(isset($_POST['submit'])){
    
    }
    $session = $_SESSION['users_id'];
-   $request= "INSERT INTO results( user_id, result,quiz_id ) VALUES ('$session', '$marks',$quizId )";
-
+   $date = date('Y-m-d H:i:s');
+   
+  
+   $request= "INSERT INTO results( user_id, result,quiz_id,answer_date_time) VALUES ('$session', '$marks','$quizId','$date')";
+  
      $response = $database->exec($request);
 ?>
 
@@ -59,7 +62,7 @@ if(isset($_POST['submit'])){
   
 echo($marks); 
  $_SESSION['marks']=$marks;
-   $_SESSION['quiz'.$quizId]='done';
+   $_SESSION['quiz'.$quizId.$_SESSION['users_id']]='done';
 ?>
 </p>
 </section>
